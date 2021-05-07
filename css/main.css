@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  height: 768px;
+  position: absolute;
+}
+
+.door {
+  background: blue;
+  width: 50px;
+  height: 80px;
+  display: block;
+}
+
+#start-screen {
+  background: url("https://i.ytimg.com/vi/_lNL5C5GYgQ/maxresdefault.jpg") no-repeat fixed center center;
+  background-size: cover;
+}
+
+#level1-screen {
+  background: url("https://cdnb.artstation.com/p/assets/images/images/020/629/821/large/zhong-hao-zheng-600.jpg?1568563766") no-repeat fixed center center;
+  background-size: cover;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,45 @@
+//@media (max-width: 600px) {
+//  .container {
+//    width: 100%;
+//  }
+//}
+//@media (min-width: 768px) and (max-width: 768px) {
+//  .container {
+//    width: 768px;
+//  }
+//}
+//@media (min-width: 992px) and (max-width: 1200px) {
+//  .container {
+//    width: 992px;
+//  }
+//}
+//@media (min-width: 1200px) {
+//  .container {
+//    width: 1200px;
+//  }
+//}
+
+//general
+.container{
+  width: 100%;
+  height: 768px;
+  position: absolute;
+}
+//buttons
+.door{
+  background: blue;
+  width: 50px;
+  height: 80px;
+  display: block;
+}
+
+#start-screen{
+  background: url("https://i.ytimg.com/vi/_lNL5C5GYgQ/maxresdefault.jpg") no-repeat fixed center center;
+  background-size: cover;
+}
+
+//levels
+#level1-screen{
+  background: url("https://cdnb.artstation.com/p/assets/images/images/020/629/821/large/zhong-hao-zheng-600.jpg?1568563766") no-repeat fixed center center;
+  background-size: cover;
+}
