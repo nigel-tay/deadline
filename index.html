@@ -6,37 +6,60 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-
+<!--Game only starts with start HTML-->
 <div id="scenes">
+
     <div id="start">
         <div id="start-screen" class="container">
+            <h1 id="start-title">DEADLINE</h1>
             <div><button id="entrance" class="door"></button></div>
         </div>
     </div>
 
-<!--    <div id="level">-->
-<!--        <div id="level1-screen" class="container">-->
-<!--            <div><button id="not-scary-at-all" class="door"></button></div>-->
-<!--            <div><button id="scary" class="door"></button></div>-->
-<!--            <div><button id="very-scary" class="door"></button></div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <div id="level">
+        <div id="level1-screen" class="container">
+            <div><button id="not-scary-at-all" class="door"></button></div>
+            <div><button id="scary" class="door"></button></div>
+            <div><button id="very-scary" class="door"></button></div>
+        </div>
+    </div>
 
-    <!--<div style= "display: none" id="death" class="container">-->
-    <!--    <div id="death-screen">-->
-    <!--        <div></div>-->
-    <!--    </div>-->
-    <!--</div>-->
+    <div id="death-display">
+        <div id="death" class="container">
+            <div id="death-text">
+                <h1>You've met the deadline...</h1>
+            </div>
 
-    <!--<div style= "display: none" id="win" class="container">-->
-    <!--    <div id="win-screen">-->
-    <!--        <div></div>-->
-    <!--    </div>-->
-    <!--</div>-->
+            <div class="head-container">
+                <div id="head">
+                    <div class="eye" id="left"></div>
+                    <div class="eye" id="right"></div>
+                    <div id="nose"></div>
+                    <div id="mouth"></div>
+                </div>
+            </div>
+
+            <div id="button-container">
+                <button id="back-to-start">Back to Start</button>
+                <button id="quick-restart">Quick Restart</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div style= "display: none" id="win" class="container">
+        <div id="win-screen">
+            <div></div>
+        </div>
+    </div>
+
 </div>
+
 <script src="js/main.js"></script>
 </body>
 </html>

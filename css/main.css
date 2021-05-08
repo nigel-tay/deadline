@@ -1,3 +1,7 @@
+body {
+  font-family: "Nosifer", cursive;
+}
+
 .container {
   width: 100%;
   height: 768px;
@@ -16,9 +20,113 @@
   background-size: cover;
 }
 
+#start-title {
+  margin: 0 auto 0 auto;
+  padding-bottom: 20px;
+  color: #7c0200;
+  font-size: 80px;
+  text-align: center;
+}
+
 #level1-screen {
   background: url("https://cdnb.artstation.com/p/assets/images/images/020/629/821/large/zhong-hao-zheng-600.jpg?1568563766") no-repeat fixed center center;
   background-size: cover;
+  height: 0%;
+  width: 0%;
+  display: none;
+}
+
+#death-display {
+  height: 0%;
+  width: 0%;
+  display: none;
+}
+
+#death {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #03342e;
+}
+
+#death-text h1 {
+  margin: 0 auto 0 auto;
+  padding-top: 0;
+  color: #7c0200;
+  font-size: 80px;
+  text-align: center;
+}
+
+.head-container {
+  height: 250px;
+  width: 250px;
+  margin-bottom: 20px;
+}
+.head-container #head {
+  width: 250px;
+  height: 250px;
+  background-color: black;
+  border-radius: 60%;
+  position: absolute;
+}
+.head-container #head .eye {
+  width: 10%;
+  height: 10%;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+}
+.head-container #head #right {
+  right: 20%;
+  top: 20%;
+  border-radius: 150% 0%;
+}
+.head-container #head #left {
+  left: 20%;
+  top: 20%;
+  border-radius: 0% 200%;
+}
+.head-container #head #mouth {
+  z-index: 1;
+  top: 10px;
+  left: 25%;
+  right: 25%;
+  bottom: 25%;
+  height: 70%;
+  width: 80%;
+  margin: 0 auto;
+  border-bottom: 8px solid white;
+  border-radius: 100%;
+}
+.head-container #head #nose {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  left: 45%;
+  bottom: 50%;
+  background-color: red;
+  border-radius: 60%;
+}
+
+#button-container {
+  display: grid;
+  justify-content: center;
+  grid-gap: 10px;
+}
+
+#back-to-start {
+  background-color: #7c0200;
+  color: white;
+  width: 100%;
+  height: 20px;
+}
+
+#quick-restart {
+  background-color: #7c0200;
+  color: white;
+  width: 100%;
+  height: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */
