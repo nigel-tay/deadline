@@ -4,12 +4,37 @@ body {
 
 .container {
   width: 100%;
-  height: 768px;
+  height: 760px;
   position: absolute;
 }
 
+.red-text {
+  color: #cd0601;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container {
+  display: grid;
+  justify-content: center;
+  grid-gap: 10px;
+  width: 100%;
+  height: 20px;
+}
+
+.button-style {
+  background-color: #7c0200;
+  color: white;
+}
+
 .door {
-  background: blue;
+  background: transparent;
+  border: none;
   width: 50px;
   height: 80px;
   display: block;
@@ -23,37 +48,101 @@ body {
 #start-title {
   margin: 0 auto 0 auto;
   padding-bottom: 20px;
-  color: #7c0200;
   font-size: 80px;
   text-align: center;
 }
 
+#entrance {
+  position: absolute;
+  left: 680px;
+  top: 500px;
+  height: 130px;
+  width: 100px;
+}
+
 #level1-screen {
   background: url("https://cdnb.artstation.com/p/assets/images/images/020/629/821/large/zhong-hao-zheng-600.jpg?1568563766") no-repeat fixed center center;
+  background-size: cover;
+  height: 0;
+  width: 0;
+  display: none;
+}
+
+.level1-poem {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+}
+
+#not-scary-at-all {
+  position: absolute;
+  top: 110px;
+  left: 135px;
+  width: 320px;
+  height: 620px;
+}
+
+#scary {
+  position: absolute;
+  top: 110px;
+  left: 550px;
+  width: 320px;
+  height: 620px;
+}
+
+#very-scary {
+  position: absolute;
+  top: 110px;
+  left: 970px;
+  width: 320px;
+  height: 620px;
+}
+
+#level2-screen {
+  background: url("https://s.abcnews.com/images/Lifestyle/HT_abandoned_places_pcstairs_jef_140620_22x15_1600.jpg") no-repeat fixed center center;
   background-size: cover;
   height: 0%;
   width: 0%;
   display: none;
 }
 
+#stair1 {
+  position: absolute;
+  top: 0;
+  left: 300px;
+  width: 160px;
+  height: 190px;
+}
+
+#middle-door {
+  position: absolute;
+  top: 300px;
+  left: 650px;
+  width: 110px;
+  height: 180px;
+}
+
+#stair2 {
+  position: absolute;
+  top: 0;
+  left: 950px;
+  width: 160px;
+  height: 190px;
+}
+
 #death-display {
-  height: 0%;
-  width: 0%;
+  height: 0;
+  width: 0;
   display: none;
 }
 
 #death {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: #03342e;
 }
 
 #death-text h1 {
   margin: 0 auto 0 auto;
   padding-top: 0;
-  color: #7c0200;
   font-size: 80px;
   text-align: center;
 }
@@ -80,12 +169,12 @@ body {
 .head-container #head #right {
   right: 20%;
   top: 20%;
-  border-radius: 150% 0%;
+  border-radius: 150% 0;
 }
 .head-container #head #left {
   left: 20%;
   top: 20%;
-  border-radius: 0% 200%;
+  border-radius: 0 200%;
 }
 .head-container #head #mouth {
   z-index: 1;
@@ -109,24 +198,133 @@ body {
   border-radius: 60%;
 }
 
-#button-container {
-  display: grid;
+#win {
+  background-color: #7d9267;
+  height: 0;
+  width: 0;
+  display: none;
+}
+
+#win-screen h1 {
+  color: #7c0200;
+  font-size: 80px;
+  text-align: center;
+}
+
+.numpad-container {
+  display: flex;
   justify-content: center;
-  grid-gap: 10px;
+  align-items: center;
+  background-color: #03342e;
+}
+.numpad-container .numpad {
+  padding-left: 10%;
+  width: 50%;
+  display: grid;
+  grid-template-columns: minmax(250px, 500px) 1fr 1fr;
+  grid-template-rows: minmax(250px, 500px) 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+}
+.numpad-container .numpad .console {
+  margin-left: 80px;
+  margin-right: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  column-gap: 10px;
+  row-gap: 10px;
+  grid-template-areas: "item1 item1 item1" "item2 item2 item2" "item3 item4 item5" "item6 item7 item8" "item9 item10 item11" "item12 item13 item14";
+}
+.numpad-container .numpad .console .item1 {
+  grid-area: item1;
+  margin: auto;
+  font-size: 50px;
+}
+.numpad-container .numpad .console .item2 {
+  grid-area: item2;
+}
+.numpad-container .numpad .console .item3 {
+  grid-area: item3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.numpad-container .numpad .console .item4 {
+  grid-area: item4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.numpad-container .numpad .console .item5 {
+  grid-area: item5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.numpad-container .numpad .console .item6 {
+  grid-area: item6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.numpad-container .numpad .console .item7 {
+  grid-area: item7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.numpad-container .numpad .console .item8 {
+  grid-area: item8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.numpad-container .numpad .console .item9 {
+  grid-area: item9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.numpad-container .numpad .console .item10 {
+  grid-area: item10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.numpad-container .numpad .console .item11 {
+  grid-area: item11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.numpad-container .numpad .console .item12 {
+  grid-area: item12;
+}
+.numpad-container .numpad .console .item13 {
+  grid-area: item13;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.numpad-container .numpad .console .item14 {
+  grid-area: item14;
 }
 
-#back-to-start {
+.numbers {
   background-color: #7c0200;
+  font-family: "Nosifer", cursive;
+  font-size: 28px;
   color: white;
   width: 100%;
-  height: 20px;
+  height: 100%;
 }
 
-#quick-restart {
-  background-color: #7c0200;
-  color: white;
-  width: 100%;
-  height: 20px;
+.numpad-poem {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 20%;
 }
 
 /*# sourceMappingURL=main.css.map */
