@@ -42,6 +42,18 @@ body {
   background-size: cover;
 }
 
+.swal-overlay {
+  background-color: #7c0200;
+}
+
+#click-to-begin {
+  font-size: 20px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .rain {
   background: url(../images/rain.png);
   height: 100%;

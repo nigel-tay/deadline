@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
 <!--Game only starts with start HTML-->
@@ -16,8 +17,18 @@
 
     <div id="start">
         <div id="start-screen" class="container">
+            <audio id="door-open" preload="auto">
+                <source src="sounds/door_open.mp3"/>
+            </audio>
+            <audio id="dead-silence" preload="auto" loop>
+                <source src="sounds/deadsilence_theme.mp3"/>
+            </audio>
+            <audio id="thunder-rain" preload="auto" loop>
+                <source src="sounds/thunder_rain.mp3"/>
+            </audio>
             <div class="rain"></div>
             <h1 id="start-title" class="red-text">DEADLINE</h1>
+            <button id="click-to-begin" class="button-style">CLICK ME TO BEGIN</button>
             <div><button id="entrance" class="door"></button></div>
         </div>
     </div>

@@ -1,7 +1,33 @@
 // ===================================== START =======================================
 //Start to level 1
 document.querySelector("#entrance").addEventListener("click", changeSceneLevel1);
-
+document.querySelector("#click-to-begin").addEventListener("click", function(){
+    swal({
+        title: "WARNING!!!!",
+        text:
+            "Deadline is best played on a 13inch screen\n" +
+            "If you have a bigger screen. After you escape this popup, Pull the bottom right corner of your browser in " +
+            "until the corner meets the background image perfectly.\n" +
+            "If you have a smaller screen, that's honestly not my problem.\n" +
+            "This game contains loud sounds.\n" +
+            "Now is your chance to adjust the volume. Headphones are recommended\n" +
+            "You have been warned, do not SUE me.\n" +
+            "To begin the game, click on the school's entrance to enter.\n" +
+            "Player's discretion is advised.",
+        buttons: {
+            cancel: "Imma sue you anyway",
+            confirm: "Fine I won't sue"
+        }
+    }).then( value => {
+        if(value) {
+            swal({
+                title: "Thanks for not suing me!",
+                text: "Enjoy the game :)",
+                icon: "success"
+            })
+        }
+    })
+});
 // ===================================== LEVEL 1 =====================================
 //Level 1 to Death Screen
 document.querySelector("#not-scary-at-all").addEventListener("click", death);
@@ -187,12 +213,11 @@ function sevenClicked(){
     document.querySelector("#dp2").disabled = false;
 }
 
-function twoClicked(){
+function disableButtons(){
     document.querySelector("#dp0").style.backgroundColor = "transparent";
     document.querySelector("#dp6").style.backgroundColor = "transparent";
     document.querySelector("#dp7").style.backgroundColor = "transparent";
     document.querySelector("#dp1").disabled = true;
-    document.querySelector("#dp2").disabled = true;
     document.querySelector("#dp3").disabled = true;
     document.querySelector("#dp4").disabled = true;
     document.querySelector("#dp5").disabled = true;
@@ -200,91 +225,57 @@ function twoClicked(){
     document.querySelector("#dp7").disabled = true;
     document.querySelector("#dp8").disabled = true;
     document.querySelector("#dp9").disabled = true;
+}
+
+function twoClicked(){
+    disableButtons()
+    document.querySelector("#dp2").disabled = true;
     win();
 }
 
 function oneClicked(){
-    document.querySelector("#dp0").style.backgroundColor = "transparent";
-    document.querySelector("#dp6").style.backgroundColor = "transparent";
-    document.querySelector("#dp7").style.backgroundColor = "transparent";
-    document.querySelector("#dp1").disabled = true;
-    document.querySelector("#dp3").disabled = true;
-    document.querySelector("#dp4").disabled = true;
-    document.querySelector("#dp5").disabled = true;
-    document.querySelector("#dp6").disabled = true;
-    document.querySelector("#dp7").disabled = true;
-    document.querySelector("#dp8").disabled = true;
-    document.querySelector("#dp9").disabled = true;
+    disableButtons()
 }
 
 function threeClicked(){
-    document.querySelector("#dp0").style.backgroundColor = "transparent";
-    document.querySelector("#dp6").style.backgroundColor = "transparent";
-    document.querySelector("#dp7").style.backgroundColor = "transparent";
-    document.querySelector("#dp1").disabled = true;
-    document.querySelector("#dp3").disabled = true;
-    document.querySelector("#dp4").disabled = true;
-    document.querySelector("#dp5").disabled = true;
-    document.querySelector("#dp6").disabled = true;
-    document.querySelector("#dp7").disabled = true;
-    document.querySelector("#dp8").disabled = true;
-    document.querySelector("#dp9").disabled = true;
+    disableButtons()
 }
 
 function fourClicked(){
-    document.querySelector("#dp0").style.backgroundColor = "transparent";
-    document.querySelector("#dp6").style.backgroundColor = "transparent";
-    document.querySelector("#dp7").style.backgroundColor = "transparent";
-    document.querySelector("#dp1").disabled = true;
-    document.querySelector("#dp3").disabled = true;
-    document.querySelector("#dp4").disabled = true;
-    document.querySelector("#dp5").disabled = true;
-    document.querySelector("#dp6").disabled = true;
-    document.querySelector("#dp7").disabled = true;
-    document.querySelector("#dp8").disabled = true;
-    document.querySelector("#dp9").disabled = true;
+    disableButtons()
 }
 
 function fiveClicked(){
-    document.querySelector("#dp0").style.backgroundColor = "transparent";
-    document.querySelector("#dp6").style.backgroundColor = "transparent";
-    document.querySelector("#dp7").style.backgroundColor = "transparent";
-    document.querySelector("#dp1").disabled = true;
-    document.querySelector("#dp3").disabled = true;
-    document.querySelector("#dp4").disabled = true;
-    document.querySelector("#dp5").disabled = true;
-    document.querySelector("#dp6").disabled = true;
-    document.querySelector("#dp7").disabled = true;
-    document.querySelector("#dp8").disabled = true;
-    document.querySelector("#dp9").disabled = true;
+    disableButtons()
 }
 
 function eightClicked(){
-    document.querySelector("#dp0").style.backgroundColor = "transparent";
-    document.querySelector("#dp6").style.backgroundColor = "transparent";
-    document.querySelector("#dp7").style.backgroundColor = "transparent";
-    document.querySelector("#dp1").disabled = true;
-    document.querySelector("#dp3").disabled = true;
-    document.querySelector("#dp4").disabled = true;
-    document.querySelector("#dp5").disabled = true;
-    document.querySelector("#dp6").disabled = true;
-    document.querySelector("#dp7").disabled = true;
-    document.querySelector("#dp8").disabled = true;
-    document.querySelector("#dp9").disabled = true;
+    disableButtons()
 }
 
 function nineClicked(){
-    document.querySelector("#dp0").style.backgroundColor = "transparent";
-    document.querySelector("#dp6").style.backgroundColor = "transparent";
-    document.querySelector("#dp7").style.backgroundColor = "transparent";
-    document.querySelector("#dp1").disabled = true;
-    document.querySelector("#dp3").disabled = true;
-    document.querySelector("#dp4").disabled = true;
-    document.querySelector("#dp5").disabled = true;
-    document.querySelector("#dp6").disabled = true;
-    document.querySelector("#dp7").disabled = true;
-    document.querySelector("#dp8").disabled = true;
-    document.querySelector("#dp9").disabled = true;
+    disableButtons()
 }
 
 //make on hover function for all doors to know that there is a clickable element
+
+//AUDIO
+
+let startBGM = document.querySelector("#dead-silence");
+let doorOpen = document.querySelector("#door-open");
+let thunderRain = document.querySelector("#thunder-rain");
+
+document.querySelector("#click-to-begin").addEventListener("click", function playStartBGM(){
+    startBGM.play();
+    thunderRain.play();
+    startBGM.volume = 0.5;
+    thunderRain.volume = 0.4;
+});
+
+document.querySelector("#entrance").addEventListener("click", function playDoorOpen(){
+    doorOpen.play();
+    doorOpen.playbackRate = 1.9;
+    startBGM.pause();
+    thunderRain.pause();
+});
+
