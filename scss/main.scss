@@ -58,27 +58,83 @@ body{
 
 //START//////////////////////////////
 #start-screen{
-  background: url("https://i.ytimg.com/vi/_lNL5C5GYgQ/maxresdefault.jpg") no-repeat fixed center center;
+  background: url(../images/start-background.jpeg) no-repeat fixed center center;
   background-size: cover;
 }
+.rain{
+  background: url(../images/rain.png);
+  height: 100%;
+  animation: rain .3s linear infinite;
+}
+.rain::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../images/lightning.png);
+  top: -80px;
+  transform: rotate(180deg);
+  animation: lightning 2s linear infinite;
+  opacity: 1;
+}
+@keyframes rain{
+  0%{
+    background-position: 0 0;
+  }
+  100%{
+    background-position: 10% 100%;
+  }
+}
+@keyframes lightning{
+  0%{
+    opacity: 0;
+  }
+  11%{
+    opacity: 1;
+  }
+  14%{
+    opacity: 0;
+  }
+  20%{
+    opacity: 0;
+  }
+  21%{
+    opacity: 1;
+  }
+  24%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
 #start-title{
   margin: 0 auto 0 auto;
-  padding-bottom: 20px;
+  //padding-bottom: 20px;
   font-size: 80px;
-  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%);
 }
 #entrance{
-  position: absolute;
-  left: 47%;
-  top: 500px;
+  //position: relative;
+  //left: 47%;
+  //top: 500px;
   height: 130px;
   width: 100px;
+  position: fixed;
+  left: 50%;
+  top: 72%;
+  transform: translate(-50%, -50%);
 }
 
 //LEVELS/////////////////////////////
 //Level 1//
 #level1-screen{
-  background: url("https://cdnb.artstation.com/p/assets/images/images/020/629/821/large/zhong-hao-zheng-600.jpg?1568563766") no-repeat fixed center center;
+  background: url(../images/level1-background.jpeg) no-repeat fixed center center;
   background-size: cover;
   height: 0;
   width: 0;
@@ -86,34 +142,41 @@ body{
 }
 #level1-poem{
   text-align: center;
-  position: absolute;
-  width: 100%
+  font-size: 20px;
+  width: 100%;
+  position: fixed;
+  left: 50%;
+  top: 5%;
+  transform: translate(-50%, -50%);
 }
 #not-scary-at-all{
-  position: absolute;
-  top: 110px;
-  left: 135px;
-  width: 320px;
-  height: 620px;
+  width: 240px;
+  height: 465px;
+  position: fixed;
+  left: 21%;
+  top: 55%;
+  transform: translate(-50%, -50%);
 }
 #scary{
-  position: absolute;
-  top: 110px;
-  left: 550px;
-  width: 320px;
-  height: 620px;
+  width: 240px;
+  height: 465px;
+  position: fixed;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
 }
 #very-scary{
-  position: absolute;
-  top: 110px;
-  left: 970px;
-  width: 320px;
-  height: 620px;
+  width: 240px;
+  height: 465px;
+  position: fixed;
+  left: 79%;
+  top: 55%;
+  transform: translate(-50%, -50%);
 }
 
 //Level 2//
 #level2-screen{
-  background: url("http://1.bp.blogspot.com/-L839-wKo3YE/U7cvWmw33nI/AAAAAAAAC8k/m6__-7RfECE/s1600/PILE+OF+KEYS+wm.jpg") no-repeat fixed center center;
+  background: url(../images/level2-background.jpeg) no-repeat fixed center center;
   background-size: cover;
   height: 0;
   width: 0;
@@ -123,6 +186,10 @@ body{
   background: #7c0200;
   color: white;
   width: 35%;
+  position: fixed;
+  left: 20%;
+  top: 10%;
+  transform: translate(-50%, -50%);
 }
 #atlas{
   width: 100px;
@@ -130,15 +197,16 @@ body{
   background-color: transparent;
   border: none;
   border-radius: 60%;
-  position: absolute;
-  left: 55%;
-  top: 33%;
+  position: fixed;
+  left: 59%;
+  top: 41%;
+  transform: translate(-50%, -50%);
 }
 
 //Level 3//
 #level3-screen{
-  background-size: auto;
-  background: black url("https://lh3.googleusercontent.com/proxy/e7EFzWXcUon78BeVKJ4XvaYPfdlDpLMqpeLYHPfAWXBprK8r1kZmhVNjm5KRC5Bjpr7J9vMuTgbM_CjXjKzRPjNNpi7I54CqB_oeeh88Tr9iiKPeeO4pDQWZlzROiGdfGfSXMIDSG_14UXbQIVZFw5llTQ") no-repeat fixed center center;
+  background: black url(../images/level3-background.jpeg) no-repeat fixed center center;
+  background-size: contain;
   height: 0;
   width: 0;
   display: none;
@@ -147,66 +215,76 @@ body{
   color: #7c0200;
   font-size: 20px;
   background-color: black;
-  width: 50%;
+  width: 90%;
   text-align: center;
-  position: absolute;
-  left: 25%;
-  top: 67%;
+  position: fixed;
+  left: 50%;
+  top: 89.9%;
+  transform: translate(-50%, -50%);
 }
 #black-face{
-  position: absolute;
-  left: 63%;
-  top: 48%;
+  background-color: transparent;
   height: 40px;
   width: 25px;
+  position: fixed;
+  left: 73%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 //Level 4//
 #level4-screen{
-  background: url("https://s.abcnews.com/images/Lifestyle/HT_abandoned_places_pcstairs_jef_140620_22x15_1600.jpg") no-repeat fixed center center;
-  background-size: cover;
-  height: 0%;
-  width: 0%;
+  background: url(../images/level4-background.jpeg) no-repeat fixed center center;
+  background-size: contain;
+  height: 0;
+  width: 0;
   display: none;
 }
 #stair1{
-  position: absolute;
-  top: 0;
-  left: 300px;
   width: 160px;
   height: 190px;
   color: white;
   font-weight: bold;
   background-color: transparent;
+  position: fixed;
+  left: 30%;
+  top: 24%;
+  transform: translate(-50%, -50%);
 }
 #middle-door{
-  position: absolute;
-  top: 300px;
-  left: 650px;
   width: 110px;
   height: 180px;
   color: white;
   font-weight: bold;
   background-color: transparent;
+  position: fixed;
+  left: 49%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 #stair2{
-  position: absolute;
-  top: 0;
-  left: 950px;
   width: 160px;
   height: 190px;
   color: white;
   font-weight: bold;
   background-color: transparent;
+  position: fixed;
+  left: 69%;
+  top: 24%;
+  transform: translate(-50%, -50%);
 }
 #level4-poem{
   font-size: 16px;
-  position: absolute;
-  left: 0.5%;
-  width: 20%;
+  color: white;
+  background-color: #7c0200;
+  width: 10%;
+  position: fixed;
+  left: 17%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 #level4-exit{
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 /////////////////////////////////////
