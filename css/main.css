@@ -113,6 +113,7 @@ body {
 }
 
 #entrance {
+  cursor: pointer;
   height: 130px;
   width: 100px;
   position: fixed;
@@ -146,6 +147,7 @@ body {
   left: 21%;
   top: 55%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 #scary {
@@ -155,6 +157,7 @@ body {
   left: 50%;
   top: 55%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 #very-scary {
@@ -164,6 +167,7 @@ body {
   left: 79%;
   top: 55%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 #level2-screen {
@@ -219,9 +223,9 @@ body {
 #black-face {
   background-color: transparent;
   height: 40px;
-  width: 25px;
+  width: 80px;
   position: fixed;
-  left: 73%;
+  left: 72%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
@@ -244,6 +248,7 @@ body {
   left: 30%;
   top: 24%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 #middle-door {
@@ -256,6 +261,7 @@ body {
   left: 49%;
   top: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 #stair2 {
@@ -268,6 +274,7 @@ body {
   left: 69%;
   top: 24%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 #level4-poem {
@@ -400,6 +407,7 @@ body {
   color: white;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .numpad-poem {
@@ -484,11 +492,29 @@ body {
   display: none;
 }
 
+#win-screen {
+  background: url(../images/cake.png);
+  background-size: contain;
+  animation: cake 2s linear infinite;
+}
 #win-screen h1 {
-  color: red;
+  color: yellow;
   font-size: 80px;
   text-align: center;
   width: 100%;
+}
+
+@keyframes cake {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 10% 100%;
+  }
+}
+#win-to-start {
+  background-color: yellow;
+  color: black;
 }
 
 /*# sourceMappingURL=main.css.map */

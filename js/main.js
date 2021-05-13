@@ -1,7 +1,13 @@
 // ===================================== START =======================================
 //Start to level 1
-document.querySelector("#entrance").addEventListener("click", changeSceneLevel1);
-document.querySelector("#click-to-begin").addEventListener("click", function(){
+document.querySelector("#entrance").addEventListener("click", () => {
+    changeSceneLevel1();
+    pauseBGM();
+    playDoorOpen();
+});
+document.querySelector("#click-to-begin").addEventListener("click", () => {
+    playStartBGM();
+    playPinpad();
     swal({
         title: "WARNING!!!!",
         text:
@@ -30,28 +36,54 @@ document.querySelector("#click-to-begin").addEventListener("click", function(){
 });
 // ===================================== LEVEL 1 =====================================
 //Level 1 to Death Screen
-document.querySelector("#not-scary-at-all").addEventListener("click", death);
-document.querySelector("#scary").addEventListener("click", death);
+document.querySelector("#not-scary-at-all").addEventListener("click", () => {
+    death();
+    playDeathAudio();
+});
+document.querySelector("#scary").addEventListener("click", () => {
+    death();
+    playDeathAudio();
+});
 
 //Level 1 to next room
-document.querySelector("#very-scary").addEventListener("click", changeSceneLevel2);
+document.querySelector("#very-scary").addEventListener("click", () => {
+    changeSceneLevel2();
+    playDoorOpen();
+});
 
 // ===================================== LEVEL 2 =====================================
-document.querySelector("#atlas").addEventListener("click", changeSceneLevel3);
+document.querySelector("#atlas").addEventListener("click", () => {
+    changeSceneLevel3();
+    playKey();
+});
 
 // ===================================== LEVEL 3 =====================================
-document.querySelector("#black-face").addEventListener("click", changeSceneLevel4);
+document.querySelector("#black-face").addEventListener("click", () => {
+    changeSceneLevel4();
+    playGiggle();
+});
 
 // ===================================== LEVEL 4 =====================================
-document.querySelector("#level4-exit").addEventListener("click", changeSceneLevel5);
-document.querySelector("#stair1").addEventListener("click", death);
-document.querySelector("#middle-door").addEventListener("click", death);
-document.querySelector("#stair2").addEventListener("click", death);
+document.querySelector("#level4-exit").addEventListener("click", () => {
+    changeSceneLevel5();
+    playPinpad();
+});
+document.querySelector("#stair1").addEventListener("click", () => {
+    death();
+    playDeathAudio();
+});
+document.querySelector("#middle-door").addEventListener("click", () => {
+    death();
+    playDeathAudio();
+});
+document.querySelector("#stair2").addEventListener("click", () => {
+    death();
+    playDeathAudio();
+});
 
 // ===================================== LEVEL 5 =====================================
 // Password sequence to be 0672
 //NUMBER PAD
-
 document.querySelector("#dp1").addEventListener("click", oneClicked);
 document.querySelector("#dp2").addEventListener("click", twoClicked);
 document.querySelector("#dp3").addEventListener("click", threeClicked);
@@ -65,18 +97,26 @@ document.querySelector("#dp0").addEventListener("click", zeroClicked);
 
 // ===================================== DEATH =======================================
 //If either "Back to start" or "Quick Restart" was selected
-document.querySelector(".back-to-start").addEventListener("click", changeSceneStart);
-document.querySelector(".quick-restart").addEventListener("click", changeSceneLevel1);
+document.querySelector(".back-to-start").addEventListener("click", () => {
+    changeSceneStart();
+    playPinpad();
+});
+document.querySelector(".quick-restart").addEventListener("click", () => {
+    changeSceneLevel1();
+    playPinpad();
+});
 
 // ===================================== WIN PAGE ====================================
 // document.getElementById("#stair1").addEventListener("click", win);
 //Win to start
-document.querySelector("#win-to-start").addEventListener("click", changeSceneStart);
+document.querySelector("#win-to-start").addEventListener("click", () => {
+    changeSceneStart();
+    pauseBGM();
+});
 
 
 //================================== FUNCTIONS =======================================
 function changeSceneLevel1(){
-
     //Hide start screen
     document.querySelector("#start").style.display = "none"
     document.querySelector("#start").style.height = "0%"
@@ -94,7 +134,6 @@ function changeSceneLevel1(){
 }
 
 function changeSceneLevel2(){
-
     //Hide level 1 screen
     document.querySelector("#level1-screen").style.display = "none"
     document.querySelector("#level1-screen").style.height = "0%"
@@ -107,7 +146,6 @@ function changeSceneLevel2(){
 }
 
 function changeSceneLevel3(){
-
     //Hide level 1 screen
     document.querySelector("#level2-screen").style.display = "none"
     document.querySelector("#level2-screen").style.height = "0%"
@@ -120,7 +158,6 @@ function changeSceneLevel3(){
 }
 
 function changeSceneLevel4(){
-
     //Hide level 1 screen
     document.querySelector("#level3-screen").style.display = "none"
     document.querySelector("#level3-screen").style.height = "0%"
@@ -133,7 +170,6 @@ function changeSceneLevel4(){
 }
 
 function changeSceneLevel5(){
-
     //Hide start screen
     document.querySelector("#level4-screen").style.display = "none"
     document.querySelector("#level4-screen").style.height = "0%"
@@ -146,7 +182,6 @@ function changeSceneLevel5(){
 }
 
 function death(){
-
     //Hide level 1
     document.querySelector("#level1-screen").style.display = "none"
     document.querySelector("#level1-screen").style.height = "0%"
@@ -193,6 +228,7 @@ function win(){
 }
 
 function zeroClicked(){
+    playPinpad();
     document.querySelector("#dp0").style.backgroundColor = "yellowgreen";
     document.querySelector("#dp1").disabled = false;
     document.querySelector("#dp3").disabled = false;
@@ -204,13 +240,23 @@ function zeroClicked(){
 }
 
 function sixClicked(){
+    playPinpad();
     document.querySelector("#dp6").style.backgroundColor = "yellowgreen";
     document.querySelector("#dp7").disabled = false;
 }
 
 function sevenClicked(){
+    playPinpad();
     document.querySelector("#dp7").style.backgroundColor = "yellowgreen";
     document.querySelector("#dp2").disabled = false;
+}
+
+function twoClicked(){
+    playPinpad();
+    playWiiSports();
+    disableButtons();
+    document.querySelector("#dp2").disabled = true;
+    win();
 }
 
 function disableButtons(){
@@ -218,6 +264,7 @@ function disableButtons(){
     document.querySelector("#dp6").style.backgroundColor = "transparent";
     document.querySelector("#dp7").style.backgroundColor = "transparent";
     document.querySelector("#dp1").disabled = true;
+    document.querySelector("#dp2").disabled = true;
     document.querySelector("#dp3").disabled = true;
     document.querySelector("#dp4").disabled = true;
     document.querySelector("#dp5").disabled = true;
@@ -227,40 +274,37 @@ function disableButtons(){
     document.querySelector("#dp9").disabled = true;
 }
 
-function twoClicked(){
-    disableButtons()
-    document.querySelector("#dp2").disabled = true;
-    win();
-}
-
 function oneClicked(){
-    disableButtons()
+    disableButtons();
+    playDeathAudio();
 }
 
 function threeClicked(){
-    disableButtons()
+    disableButtons();
+    playDeathAudio();
 }
 
 function fourClicked(){
-    disableButtons()
+    disableButtons();
+    playDeathAudio();
 }
 
 function fiveClicked(){
-    disableButtons()
+    disableButtons();
+    playDeathAudio();
 }
 
 function eightClicked(){
-    disableButtons()
+    disableButtons();
+    playDeathAudio();
 }
 
 function nineClicked(){
-    disableButtons()
+    disableButtons();
+    playDeathAudio();
 }
 
-//make on hover function for all doors to know that there is a clickable element
-
-//AUDIO
-
+//============================ AUDIO FUNCTIONS =======================================
 const startBGM = document.querySelector("#dead-silence");
 const doorOpen = document.querySelector("#door-open");
 const thunderRain = document.querySelector("#thunder-rain");
@@ -272,51 +316,6 @@ const keyPickUp = document.querySelector("#key-pickup");
 const pinpad = document.querySelector("#pinpad");
 const wiiSports = document.querySelector("#wii-sports");
 
-//START
-//Click me activates thunder and bgm
-document.querySelector("#click-to-begin").addEventListener("click", playStartBGM);
-//entrance door open sound. Pause thunder and bgm
-document.querySelector("#entrance").addEventListener("click", () => {
-    playDoorOpen();
-    pauseBGM();
-});
-
-//LEVEL 1
-document.querySelector("#very-scary").addEventListener("click", playDoorOpen);
-document.querySelector("#not-scary-at-all").addEventListener("click", deathAudio);
-document.querySelector("#scary").addEventListener("click", deathAudio);
-
-//LEVEL 2
-document.querySelector("#atlas").addEventListener("click", playKey);
-
-//LEVEL 3
-document.querySelector("#black-face").addEventListener("click", playGiggle);
-
-//LEVEL 4
-document.querySelector("#stair1").addEventListener("click", deathAudio);
-document.querySelector("#middle-door").addEventListener("click", deathAudio);
-document.querySelector("#stair2").addEventListener("click", deathAudio);
-document.querySelector("#level4-exit").addEventListener("click", playDoorOpen);
-
-//LEVEL 5
-document.querySelector("#dp1").addEventListener("click", deathAudio);
-document.querySelector("#dp2").addEventListener("click", () => {
-    playPinpad();
-    playWiiSports();
-});
-document.querySelector("#dp3").addEventListener("click", deathAudio);
-document.querySelector("#dp4").addEventListener("click", deathAudio);
-document.querySelector("#dp5").addEventListener("click", deathAudio);
-document.querySelector("#dp6").addEventListener("click", playPinpad);
-document.querySelector("#dp7").addEventListener("click", playPinpad);
-document.querySelector("#dp8").addEventListener("click", deathAudio);
-document.querySelector("#dp9").addEventListener("click", deathAudio);
-document.querySelector("#dp0").addEventListener("click", playPinpad);
-
-//WIN SCREEN
-document.querySelector("#win-to-start").addEventListener("click", pauseBGM);
-
-//Audio Functions
 function pauseBGM(){
     startBGM.pause();
     thunderRain.pause();
@@ -338,7 +337,7 @@ function playDoorOpen(){
     doorOpen.playbackRate = 1.9;
 }
 
-function deathAudio(){
+function playDeathAudio(){
     deathNoise.currentTime = 0;
     evilLaugh.currentTime = 0;
     jumpScare.currentTime = 0;
@@ -346,6 +345,7 @@ function deathAudio(){
     evilLaugh.play();
     jumpScare.play();
     deathNoise.volume = 0.2;
+    deathNoise.playbackRate = 2;
     evilLaugh.volume = 0.2;
     jumpScare.volume = 0.3;
 }

@@ -1,24 +1,3 @@
-//@media (max-width: 600px) {
-//  .container {
-//    width: 100%;
-//  }
-//}
-//@media (min-width: 768px) and (max-width: 768px) {
-//  .container {
-//    width: 768px;
-//  }
-//}
-//@media (min-width: 992px) and (max-width: 1200px) {
-//  .container {
-//    width: 992px;
-//  }
-//}
-//@media (min-width: 1200px) {
-//  .container {
-//    width: 1200px;
-//  }
-//}
-
 //GENERAL////////////////////////////
 body{
   font-family: 'Nosifer', cursive;
@@ -133,6 +112,7 @@ body{
   //position: relative;
   //left: 47%;
   //top: 500px;
+  cursor: pointer;
   height: 130px;
   width: 100px;
   position: fixed;
@@ -166,6 +146,7 @@ body{
   left: 21%;
   top: 55%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 #scary{
   width: 240px;
@@ -174,6 +155,7 @@ body{
   left: 50%;
   top: 55%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 #very-scary{
   width: 240px;
@@ -182,6 +164,7 @@ body{
   left: 79%;
   top: 55%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 //Level 2//
@@ -235,9 +218,9 @@ body{
 #black-face{
   background-color: transparent;
   height: 40px;
-  width: 25px;
+  width: 80px;
   position: fixed;
-  left: 73%;
+  left: 72%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
@@ -259,6 +242,7 @@ body{
   left: 30%;
   top: 24%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 #middle-door{
   width: 110px;
@@ -270,6 +254,7 @@ body{
   left: 49%;
   top: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 #stair2{
   width: 160px;
@@ -281,6 +266,7 @@ body{
   left: 69%;
   top: 24%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 #level4-poem{
   font-size: 16px;
@@ -434,6 +420,7 @@ body{
   color: white;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 .numpad-poem{
   position: absolute;
@@ -531,15 +518,26 @@ body{
   display: none;
 }
 #win-screen{
+  background: url(../images/cake.png);
+  background-size: contain;
+  animation: cake 2s linear infinite;
+
   & h1{
-    color: red;
+    color: yellow;
     font-size: 80px;
     text-align: center;
     width: 100%;
   }
 }
-//#win-to-start{
-//  background-color: yellowgreen;
-//  color: black;
-//}
-/////////////////////////////////////
+@keyframes cake{
+  0%{
+    background-position: 0 0;
+  }
+  100%{
+    background-position: 10% 100%;
+  }
+}
+#win-to-start{
+  background-color: yellow;
+  color: black;
+}
