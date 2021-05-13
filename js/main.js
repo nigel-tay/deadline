@@ -12,12 +12,15 @@ document.querySelector("#click-to-begin").addEventListener("click", () => {
         title: "WARNING!!!!",
         text:
             "Deadline is best played on a 13inch screen\n" +
-            "If you have a bigger screen, after leaving this popup, Pull the bottom right corner of your browser in " +
-            "until the corner meets the background image perfectly.\n" +
-            "If you have a smaller screen, that's honestly not my problem.\n" +
+            "\n" +
+            "If you are playing on a bigger screen, after leaving this popup, Pull the bottom right corner of your browser in " +
+            "until the corner meets the background image perfectly." +
+            "If you have a smaller screen, it's time for an upgrade son.\n" +
+            "\n" +
             "This game contains loud sounds.\n" +
-            "Now is your chance to adjust the volume. Headphones are recommended\n" +
+            "Now is your chance to adjust the volume. Headphones recommended.\n" +
             "You have been warned, do not SUE me.\n" +
+            "\n" +
             "To begin the game, click on the school's entrance to enter.\n" +
             "Player's discretion is advised.",
         buttons: {
@@ -28,7 +31,7 @@ document.querySelector("#click-to-begin").addEventListener("click", () => {
         if(value) {
             swal({
                 title: "Thanks for not suing me!",
-                text: "Enjoy the game :)",
+                text: "Good luck, have fun...",
                 icon: "success"
             })
         }
