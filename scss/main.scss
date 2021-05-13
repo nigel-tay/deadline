@@ -525,16 +525,21 @@ body{
 //WIN////////////////////////////////
 //if possible to add raining cake animation.
 #win{
-  background-color: #7d9267;
+  background: url(../images/dancing-skeletons.gif);
   height: 0;
   width: 0;
   display: none;
 }
 #win-screen{
   & h1{
-    color: #7c0200;
+    color: red;
     font-size: 80px;
     text-align: center;
+    width: 100%;
   }
 }
+//#win-to-start{
+//  background-color: yellowgreen;
+//  color: black;
+//}
 /////////////////////////////////////

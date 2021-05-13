@@ -6,7 +6,7 @@ document.querySelector("#click-to-begin").addEventListener("click", function(){
         title: "WARNING!!!!",
         text:
             "Deadline is best played on a 13inch screen\n" +
-            "If you have a bigger screen. After you escape this popup, Pull the bottom right corner of your browser in " +
+            "If you have a bigger screen, after leaving this popup, Pull the bottom right corner of your browser in " +
             "until the corner meets the background image perfectly.\n" +
             "If you have a smaller screen, that's honestly not my problem.\n" +
             "This game contains loud sounds.\n" +
@@ -71,7 +71,7 @@ document.querySelector(".quick-restart").addEventListener("click", changeSceneLe
 // ===================================== WIN PAGE ====================================
 // document.getElementById("#stair1").addEventListener("click", win);
 //Win to start
-document.querySelector(".win-to-start").addEventListener("click", changeSceneStart);
+document.querySelector("#win-to-start").addEventListener("click", changeSceneStart);
 
 
 //================================== FUNCTIONS =======================================
@@ -261,21 +261,118 @@ function nineClicked(){
 
 //AUDIO
 
-let startBGM = document.querySelector("#dead-silence");
-let doorOpen = document.querySelector("#door-open");
-let thunderRain = document.querySelector("#thunder-rain");
+const startBGM = document.querySelector("#dead-silence");
+const doorOpen = document.querySelector("#door-open");
+const thunderRain = document.querySelector("#thunder-rain");
+const giggle = document.querySelector("#giggle");
+const deathNoise = document.querySelector("#death-noise");
+const evilLaugh = document.querySelector("#evil-laugh");
+const jumpScare = document.querySelector("#jump-scare");
+const keyPickUp = document.querySelector("#key-pickup");
+const pinpad = document.querySelector("#pinpad");
+const wiiSports = document.querySelector("#wii-sports");
 
-document.querySelector("#click-to-begin").addEventListener("click", function playStartBGM(){
-    startBGM.play();
-    thunderRain.play();
-    startBGM.volume = 0.5;
-    thunderRain.volume = 0.4;
+//START
+//Click me activates thunder and bgm
+document.querySelector("#click-to-begin").addEventListener("click", playStartBGM);
+//entrance door open sound. Pause thunder and bgm
+document.querySelector("#entrance").addEventListener("click", () => {
+    playDoorOpen();
+    pauseBGM();
 });
 
-document.querySelector("#entrance").addEventListener("click", function playDoorOpen(){
-    doorOpen.play();
-    doorOpen.playbackRate = 1.9;
+//LEVEL 1
+document.querySelector("#very-scary").addEventListener("click", playDoorOpen);
+document.querySelector("#not-scary-at-all").addEventListener("click", deathAudio);
+document.querySelector("#scary").addEventListener("click", deathAudio);
+
+//LEVEL 2
+document.querySelector("#atlas").addEventListener("click", playKey);
+
+//LEVEL 3
+document.querySelector("#black-face").addEventListener("click", playGiggle);
+
+//LEVEL 4
+document.querySelector("#stair1").addEventListener("click", deathAudio);
+document.querySelector("#middle-door").addEventListener("click", deathAudio);
+document.querySelector("#stair2").addEventListener("click", deathAudio);
+document.querySelector("#level4-exit").addEventListener("click", playDoorOpen);
+
+//LEVEL 5
+document.querySelector("#dp1").addEventListener("click", deathAudio);
+document.querySelector("#dp2").addEventListener("click", () => {
+    playPinpad();
+    playWiiSports();
+});
+document.querySelector("#dp3").addEventListener("click", deathAudio);
+document.querySelector("#dp4").addEventListener("click", deathAudio);
+document.querySelector("#dp5").addEventListener("click", deathAudio);
+document.querySelector("#dp6").addEventListener("click", playPinpad);
+document.querySelector("#dp7").addEventListener("click", playPinpad);
+document.querySelector("#dp8").addEventListener("click", deathAudio);
+document.querySelector("#dp9").addEventListener("click", deathAudio);
+document.querySelector("#dp0").addEventListener("click", playPinpad);
+
+//WIN SCREEN
+document.querySelector("#win-to-start").addEventListener("click", pauseBGM);
+
+//Audio Functions
+function pauseBGM(){
     startBGM.pause();
     thunderRain.pause();
-});
+    wiiSports.pause();
+}
 
+function playStartBGM(){
+    startBGM.currentTime = 0;
+    thunderRain.currentTime = 0;
+    startBGM.play();
+    thunderRain.play();
+    startBGM.volume = 0.1;
+    thunderRain.volume = 0.1;
+}
+
+function playDoorOpen(){
+    doorOpen.currentTime = 0;
+    doorOpen.play();
+    doorOpen.playbackRate = 1.9;
+}
+
+function deathAudio(){
+    deathNoise.currentTime = 0;
+    evilLaugh.currentTime = 0;
+    jumpScare.currentTime = 0;
+    deathNoise.play();
+    evilLaugh.play();
+    jumpScare.play();
+    deathNoise.volume = 0.2;
+    evilLaugh.volume = 0.2;
+    jumpScare.volume = 0.3;
+}
+
+function playKey(){
+    keyPickUp.currentTime = 0;
+    keyPickUp.play();
+    keyPickUp.volume = 0.5;
+    keyPickUp.playbackRate = 3;
+}
+
+function playGiggle(){
+    giggle.currentTime = 0;
+    giggle.play();
+    giggle.volume = 0.2;
+    giggle.playbackRate = 1.4;
+}
+
+function playPinpad(){
+    pinpad.currentTime = 0;
+    pinpad.play();
+    pinpad.volume = 0.5;
+    pinpad.playbackRate = 2;
+}
+
+function playWiiSports(){
+    wiiSports.currentTime = 0;
+    wiiSports.play();
+    wiiSports.volume = 0.3;
+}

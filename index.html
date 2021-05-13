@@ -15,17 +15,39 @@
 <!--Game only starts with start HTML-->
 <div id="scenes">
 
+    <audio id="door-open" preload="auto">
+        <source src="sounds/door_open.mp3"/>
+    </audio>
+    <audio id="dead-silence" preload="auto" loop>
+        <source src="sounds/deadsilence_theme.mp3"/>
+    </audio>
+    <audio id="thunder-rain" preload="auto" loop>
+        <source src="sounds/thunder_rain.mp3"/>
+    </audio>
+    <audio id="giggle" preload="auto">
+        <source src="sounds/giggle.mp3"/>
+    </audio>
+    <audio id="death-noise" preload="auto">
+        <source src="sounds/death_noise.mp3"/>
+    </audio>
+    <audio id="evil-laugh" preload="auto">
+        <source src="sounds/evil_laugh.mp3"/>
+    </audio>
+    <audio id="jump-scare" preload="auto">
+        <source src="sounds/jump_scare.mp3"/>
+    </audio>
+    <audio id="key-pickup" preload="auto">
+        <source src="sounds/key_pickup.mp3"/>
+    </audio>
+    <audio id="pinpad" preload="auto">
+        <source src="sounds/pinpad.mp3"/>
+    </audio>
+    <audio id="wii-sports" preload="auto" loop>
+        <source src="sounds/wii_sports.mp3"/>
+    </audio>
+
     <div id="start">
         <div id="start-screen" class="container">
-            <audio id="door-open" preload="auto">
-                <source src="sounds/door_open.mp3"/>
-            </audio>
-            <audio id="dead-silence" preload="auto" loop>
-                <source src="sounds/deadsilence_theme.mp3"/>
-            </audio>
-            <audio id="thunder-rain" preload="auto" loop>
-                <source src="sounds/thunder_rain.mp3"/>
-            </audio>
             <div class="rain"></div>
             <h1 id="start-title" class="red-text">DEADLINE</h1>
             <button id="click-to-begin" class="button-style">CLICK ME TO BEGIN</button>
@@ -135,10 +157,12 @@
 
     <div id="win" class="container center">
         <div id="win-screen">
-            <h1>You made it out alive...</h1>
-            <h1>Have some cake</h1>
+            <h1>
+                You made it out alive...<br />
+                Have some cake, you deserve it!
+            </h1>
             <div class="button-container">
-                <button class="win-to-start button-style">Back to Start</button>
+                <button id="win-to-start" class="button-style">Back to Start</button>
             </div>
         </div>
     </div>
