@@ -4,6 +4,7 @@ document.querySelector("#entrance").addEventListener("click", () => {
     changeSceneLevel1();
     pauseBGM();
     playDoorOpen();
+    playAmbient();
 });
 document.querySelector("#click-to-begin").addEventListener("click", () => {
     playStartBGM();
@@ -11,17 +12,14 @@ document.querySelector("#click-to-begin").addEventListener("click", () => {
     swal({
         title: "WARNING!!!!",
         text:
-            "Deadline is best played on a 13inch screen\n" +
-            "\n" +
-            "If you are playing on a bigger screen, after leaving this popup, Pull the bottom right corner of your browser in " +
-            "until the corner meets the background image perfectly." +
-            "If you have a smaller screen, it's time for an upgrade son.\n" +
+            "Deadline is best enjoyed on a 13inch screen\n" +
             "\n" +
             "This game contains loud sounds.\n" +
             "Now is your chance to adjust the volume. Headphones recommended.\n" +
             "You have been warned, do not SUE me.\n" +
             "\n" +
             "To begin the game, click on the school's entrance to enter.\n" +
+            "\n" +
             "Player's discretion is advised.",
         buttons: {
             cancel: "Imma sue you anyway",
@@ -42,10 +40,12 @@ document.querySelector("#click-to-begin").addEventListener("click", () => {
 document.querySelector("#not-scary-at-all").addEventListener("click", () => {
     death();
     playDeathAudio();
+    ambient.pause();
 });
 document.querySelector("#scary").addEventListener("click", () => {
     death();
     playDeathAudio();
+    ambient.pause();
 });
 
 //Level 1 to next room
@@ -74,14 +74,17 @@ document.querySelector("#level4-exit").addEventListener("click", () => {
 document.querySelector("#stair1").addEventListener("click", () => {
     death();
     playDeathAudio();
+    ambient.pause();
 });
 document.querySelector("#middle-door").addEventListener("click", () => {
     death();
     playDeathAudio();
+    ambient.pause();
 });
 document.querySelector("#stair2").addEventListener("click", () => {
     death();
     playDeathAudio();
+    ambient.pause();
 });
 
 // ===================================== LEVEL 5 =====================================
@@ -107,6 +110,7 @@ document.querySelector(".back-to-start").addEventListener("click", () => {
 document.querySelector(".quick-restart").addEventListener("click", () => {
     changeSceneLevel1();
     playPinpad();
+    playAmbient();
 });
 
 // ===================================== WIN PAGE ====================================
@@ -115,6 +119,7 @@ document.querySelector(".quick-restart").addEventListener("click", () => {
 document.querySelector("#win-to-start").addEventListener("click", () => {
     changeSceneStart();
     pauseBGM();
+    playPinpad();
 });
 
 
@@ -258,6 +263,7 @@ function twoClicked(){
     playPinpad();
     playWiiSports();
     disableButtons();
+    ambient.pause();
     document.querySelector("#dp2").disabled = true;
     win();
 }
@@ -318,6 +324,7 @@ const jumpScare = document.querySelector("#jump-scare");
 const keyPickUp = document.querySelector("#key-pickup");
 const pinpad = document.querySelector("#pinpad");
 const wiiSports = document.querySelector("#wii-sports");
+const ambient = document.querySelector("#ambient");
 
 function pauseBGM(){
     startBGM.pause();
@@ -378,4 +385,10 @@ function playWiiSports(){
     wiiSports.currentTime = 0;
     wiiSports.play();
     wiiSports.volume = 0.3;
+}
+
+function playAmbient(){
+    ambient.currentTime = 0;
+    ambient.play();
+    ambient.volume = 0.4;
 }
