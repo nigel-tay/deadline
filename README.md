@@ -1,64 +1,66 @@
 # deadline
-##Look for clues to choose the right path out of horror school. Will carelessness get the better of you?
+## Solve the riddles to escape horror school. Will carelessness get the better of you? Or will you prevail?
 
-####Technologies used:
+#### Technologies used:
 Sweet Alert, SASS.
 
-####Approach taken:
+#### Approach taken:
 First I had to breakdown my initial game idea and see if it was feasible or not. After having a solid idea of what I wanted to build, I then broke my game down to different bite sized pieces in which I could tackle separately. It also helps to build the game loop first, before adding all the extra fluff.
 
-####Unsolved Problems:
+#### Unsolved Problems:
 Even though my game works on different screen sizes (other than mobile), it really doesnt look that pretty if you dont resie your browser to the 13inches I used to design it.
 
-##Resources: 
+## Resources: 
 
-####Start screen background:
+#### Start screen background:
 "https://i.ytimg.com/vi/_lNL5C5GYgQ/maxresdefault.jpg"
 
-####Scary doors:
+#### Scary doors:
 "https://www.artstation.com/a970216568"
 
-####Keys:
+#### Keys:
 "http://1.bp.blogspot.com/-L839-wKo3YE/U7cvWmw33nI/AAAAAAAAC8k/m6__-7RfECE/s1600/PILE+OF+KEYS+wm.jpg"
 
-####Chair Room: "https://lh3.googleusercontent.com/proxy/e7EFzWXcUon78BeVKJ4XvaYPfdlDpLMqpeLYHPfAWXBprK8r1kZmhVNjm5KRC5Bjpr7J9vMuTgbM_CjXjKzRPjNNpi7I54CqB_oeeh88Tr9iiKPeeO4pDQWZlzROiGdfGfSXMIDSG_14UXbQIVZFw5llTQ"
+#### Chair Room:
+"https://lh3.googleusercontent.com/proxy/e7EFzWXcUon78BeVKJ4XvaYPfdlDpLMqpeLYHPfAWXBprK8r1kZmhVNjm5KRC5Bjpr7J9vMuTgbM_CjXjKzRPjNNpi7I54CqB_oeeh88Tr9iiKPeeO4pDQWZlzROiGdfGfSXMIDSG_14UXbQIVZFw5llTQ"
 
-####Staired room: "https://s.abcnews.com/images/Lifestyle/HT_abandoned_places_pcstairs_jef_140620_22x15_1600.jpg"
+#### Staired room:
+"https://s.abcnews.com/images/Lifestyle/HT_abandoned_places_pcstairs_jef_140620_22x15_1600.jpg"
 
-####Dancing Skeleton gif:
+#### Dancing Skeleton gif:
 "https://www.google.com/imgres?imgurl=https%3A%2F%2Fmedia1.giphy.com%2Fmedia%2FR7mR1YmHaOwlW%2Fgiphy.gif&imgrefurl=https%3A%2F%2Fgiphy.com%2Fexplore%2Fdancing-skeletons&tbnid=K1uFDP1PimXYfM&vet=12ahUKEwiG-ePfhsfwAhXGSCsKHfbpAFEQMygIegUIARD-AQ..i&docid=ZxxS2d9FVg-9jM&w=500&h=380&q=dancing%20skeleton%20cake%20gif&ved=2ahUKEwiG-ePfhsfwAhXGSCsKHfbpAFEQMygIegUIARD-AQ"
 
-##Audio resources:
+## Audio resources:
 
-####Dead silence theme:
+#### Dead silence theme:
 "https://www.youtube.com/watch?v=UI2WuKFX7u0"
 
-####Rain and thunder:
+#### Rain and thunder:
 "https://www.youtube.com/watch?v=PBvvtYv5Tyk&t=8s&ab_channel=nBeats"
 
-####Door open:
+#### Door open:
 "https://www.youtube.com/watch?v=4Soin-Mblew"
 
-####Death noise:
+#### Death noise:
 "https://www.youtube.com/watch?v=VUgpueoMTjk&ab_channel=ZAC7100"
 
-####Evil laugh:
+#### Evil laugh:
 "https://www.youtube.com/watch?v=JAsmK-LIYIE&ab_channel=Music%26SoundsEffectLibrary"
 
-####Giggle:
+#### Giggle:
 "https://www.youtube.com/watch?v=0tkgUd3StZk"
 
-####Jump scare:
+#### Jump scare:
 "https://www.youtube.com/watch?v=JAsmK-LIYIE&ab_channel=Music%26SoundsEffectLibrary"
 
-####Coin sound:
+#### Coin sound:
 "https://www.youtube.com/watch?v=Jhly-pSbTKQ"
 
-####Wooden button sound:
+#### Wooden button sound:
 "https://www.youtube.com/watch?v=T_Q3M6vpCAQ"
 
-####Wii Sports theme:
+#### Wii Sports theme:
 "https://www.youtube.com/watch?v=d5c4KOopwLs"
 
-####Horror ambient music: 
+#### Horror ambient music: 
 "https://www.youtube.com/watch?v=xAO3x-Uhfoo"
