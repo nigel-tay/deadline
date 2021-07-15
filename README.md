@@ -1,4 +1,5 @@
 # deadline
+https://pages.git.generalassemb.ly/nigel-tay/deadline/
 ## Solve the riddles to escape horror school. Will carelessness get the better of you? Or will you prevail?
 
 #### Technologies used:
